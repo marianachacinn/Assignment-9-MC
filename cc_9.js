@@ -54,3 +54,10 @@ company.listEmployees();
 // Expected output:
 // "Employee: Alice Johnson, ID: 101, Department: Sales, Salary: $5000"
 // "Manager: John Smith, ID: 201, Department: IT, Salary: $8000, Team Size: 5"
+
+console.log ('Task 4: Implementing a Payroll System') //task 4
+calculateTotalPayroll(); { //sum pf all employee salaries
+    return this.employees.reduce((total, emp) => total + emp.calculateAnnualSalary(), 0); //includes managers    
+} //test cases
+console.log(company.calculateTotalPayroll()); // Expected output: 172800 (assuming emp1 and mgr1 salaries)
+
