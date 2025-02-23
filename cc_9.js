@@ -16,3 +16,20 @@ class Employee {
 const emp1 = new Employee("Alice Johnson", 101, "Sales", 5000);
 console.log(emp1.getDetails()); // Expected output: "Employee: Alice Johnson, ID: 101, Department: Sales, Salary: $5000"
 console.log(emp1.calculateAnnualSalary()); // Expected output: 60000
+
+console.log ('Task 2: Creating a Manager Class') //task 2
+class Manager extends Employee { //manger works off the employeee class
+    constructor(name, id, department, salary, teamSize) { //added teamsize
+        super(name, id, department, salary);
+        this.teamSize = teamSize;
+    }
+    getDetails() { //returns updated employee details
+        return `Manager: ${this.name}, ID: ${this.id}, Department: ${this.department}, Salary: $${this.salary}, Team Size: ${this.teamSize}`;
+    }
+    calculateBonus() { //manager bonus includes a 10% of annual salary
+        return this.calculateAnnualSalary() * 0.10;
+    }
+}//test cases
+const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5);
+console.log(mgr1.getDetails()); // Expected output: "Manager: John Smith, ID: 201, Department: IT, Salary: $8000, Team Size: 5"
+console.log(mgr1.calculateBonus()); // Expected output: 9600
