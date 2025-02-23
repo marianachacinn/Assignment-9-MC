@@ -61,3 +61,13 @@ calculateTotalPayroll(); { //sum pf all employee salaries
 } //test cases
 console.log(company.calculateTotalPayroll()); // Expected output: 172800 (assuming emp1 and mgr1 salaries)
 
+console.log ('Task 5: Implementing Promotions') //task 5
+promoteToManager(employee, teamSize); { //new method for company class
+    const index = this.employees.indexOf(employee); //converts employees to managers
+    if (index !== -1) {
+        this.employees[index] = new Manager(employee.name, employee.id, employee.department, employee.salary, teamSize);
+    }
+}//test cases
+company.promoteToManager(emp1, 3);
+company.listEmployees();
+// Expected output: "Manager: Alice Johnson, ID: 101, Department: Sales, Salary: $5000, Team Size: 3"
